@@ -4,6 +4,7 @@
 int primeNumberCalculator(int entry)
 {
   int i;
+  //for(i = 2; i <= sqrt(entry); i++){}
   for (i = 2; i <= entry / 2; i++)
   {
     //se a entrada por i for igual a zero significa não primo
