@@ -6,6 +6,10 @@ int primeNumberCalculator(int entry)
   int i;
   //double sqrtValue = sqrt(entry);
   //for(i = 2; i <= sqrtValue; i++){}
+  if (entry == 2 || entry == 1 || entry == 0)
+  {
+    return 1;
+  }
   for (i = 2; i <= entry / 2; i++)
   {
     //se a entrada por i for igual a zero significa não primo
