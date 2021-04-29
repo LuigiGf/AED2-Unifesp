@@ -6,9 +6,9 @@ int primeNumberCalculator(int entry)
   int i;
   //double sqrtValue = sqrt(entry);
   //for(i = 2; i <= sqrtValue; i++){}
-  if (entry == 2 || entry == 1 || entry == 0)
+  if (entry < 2)
   {
-    return 1;
+    return 0;
   }
   for (i = 2; i <= entry / 2; i++)
   {
