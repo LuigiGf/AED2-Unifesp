@@ -16,6 +16,7 @@ void bubble_sort(int vetor[], int n)
         aux = vetor[j];
         vetor[j] = vetor[j + 1];
         vetor[j + 1] = aux;
+        //contador adicionado para identificar qual dos dois ganhou
         count++;
       }
     }
@@ -41,7 +42,7 @@ int main(void)
   {
     printf("%d ", vet[i]);
   }
-
+  //verifica o vencedor baseado no vencedor
   if (count % 2 == 0)
   {
     printf("\nMarcelo");
