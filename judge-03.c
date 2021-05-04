@@ -1,56 +1,48 @@
 #include <stdio.h>
 
-int count = 1;
-
-//Código do bubble sort pego no site http://devfuria.com.br/logica-de-programacao/exemplos-na-linguagem-c-do-algoritmo-bubble-sort/
-void bubble_sort(int vetor[], int n)
+void InsertionSort(int i, int array[], int size, int pos)
 {
-  int k, j, aux;
-
-  for (k = 1; k < n; k++)
+  if (i < size)
   {
-    for (j = 0; j < n - k; j++)
+    int x;
+    int temp = array[i];
+
+    for (x = i; x > 0 && array[x - 1] > temp; x--)
     {
-      if (vetor[j] > vetor[j + 1])
-      {
-        aux = vetor[j];
-        vetor[j] = vetor[j + 1];
-        vetor[j + 1] = aux;
-        //contador adicionado para identificar qual dos dois ganhou
-        count++;
-      }
+      array[x] = array[x - 1];
     }
+    if (i != 0)
+    {
+      //printa o nivel de recursao
+      printf("%d", pos - i);
+      //printa o valor da chave
+      printf(" %d ", temp);
+      //printa a localização do elemento
+      printf("%d \n", x);
+    }
+
+    array[x] = temp;
+
+    InsertionSort(++i, array, size, pos);
   }
 }
 
 int main(void)
 {
-  int n, number, i;
+  int n, i;
   scanf("%d", &n);
-
-  int vet[n];
-
-  for (i = 0; i < n; i++)
-  {
-    scanf("%d", &number);
-    vet[i] = number;
-  }
-
-  bubble_sort(vet, n);
+  int arr[n];
 
   for (i = 0; i < n; i++)
   {
-    printf("%d ", vet[i]);
+    scanf("%d", &arr[i]);
   }
-  //verifica o vencedor baseado no vencedor
-  if (count % 2 == 0)
+  InsertionSort(0, arr, n, n);
+  for (i = 0; i < n; i++)
   {
-    printf("\nMarcelo");
+    printf(" %d ", arr[i]);
   }
-  else
-  {
-    printf("\nCarlos");
-  }
+  printf("\n");
 
   return 0;
 }
