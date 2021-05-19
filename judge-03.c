@@ -18,7 +18,7 @@ void InsertionSort(int i, int array[], int size, int pos)
       //printa o valor da chave
       printf(" %d ", temp);
       //printa a localização do elemento
-      printf("%d \n", x);
+      printf("%d\n", x);
     }
 
     array[x] = temp;
