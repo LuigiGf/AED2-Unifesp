@@ -34,7 +34,11 @@ void heapSort(char arr[][21], int n)
 {
   int i;
   for (i = n / 2 - 1; i >= 0; i--)
+  {
     heapify(arr, n, i);
+  }
+  for (i = 0; i < n; i++)
+    printf("%s ", arr[i]);
 
   for (i = n - 1; i > 0; i--)
   {
@@ -78,14 +82,17 @@ int main(void)
   }
   //printa o heap
   printf("build_heap:");
-  for (i = 0; i < m; i++)
-  {
-    printf("%s ", vet[i]);
-  }
-  printf("\n");
+  //mudei onde printar o buildheap devido a inversão de dados
+
+  // for (i = 0; i < m; i++)
+  // {
+  //   printf("%s ", vet[i]);
+  // }
+  // printf("\n");
 
   //faz a ordenação
   heapSort(vet, m);
+  printf("\n");
   printf("palavras:");
   //printa o vetor ordenado
   for (i = 0; i < m; i++)
