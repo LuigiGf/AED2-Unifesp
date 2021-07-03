@@ -215,7 +215,6 @@ int main(void)
       break;
     insereElemento(&arvore, valor);
   }
-
   printaAltura(&arvore);
   scanf("%d", &valor);
   while (valor > 0)
